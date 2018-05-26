@@ -11,7 +11,7 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
 
 <title>About</title>
-<div class="topnav">
+<!-- <div class="topnav">
   <img src="./img/textlogo.png" alt = "Homies logo"
   width =200px
   height = 80px
@@ -22,11 +22,9 @@
   <a href="#contact" onclick="window.location.href='http://localhost:3000/search'">Find Your Homies</a>
   <a href="#about" onclick="window.location.href='http://localhost:3000/about'">About Homies</a>
   <a href="#contact" onclick="window.location.href='http://localhost:3000/contactus'">Contact Us</a>
-</div>
+</div> -->
   </head>
   <body>
-  <br>
-  </br>
   <div class="wrapper">
   <div class = "logo">
     <img src="./img/logo.png" alt = "Homies logo"
@@ -36,4 +34,14 @@
     display: block
     margin-left: auto
     margin-right: auto/>
+    <script>
+<<<<<<< HEAD
+    $.get("navbar.html", function(data){
+=======
+    $.get("navigationBar.html", function(data){
+>>>>>>> 153034ea5c9c12ffa3ddb14e75d3992809c33edc
+    $("#nav").replaceWith(data);
+    });
+    </script>
   </div>
+</body>
