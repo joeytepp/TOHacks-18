@@ -29,6 +29,17 @@ app.use('/search', (req, res, next) => {
   res.sendFile(__dirname+'/client/views/search.html');
 });
 
+app.use('/profile', (req, res, next) => {
+  res.sendFile(__dirname+'/client/views/profile.html');
+});
+
+app.use('/about', (req, res, next) => {
+  res.sendFile(__dirname+'/client/views/about.html');
+});
+
+app.use('/contactus', (req, res, next) => {
+  res.sendFile(__dirname+'/client/views/contactus.html');
+});
 // API routes
 app.use('/api/users', usersPath);
 app.use('/api/groups', groupsPath);
