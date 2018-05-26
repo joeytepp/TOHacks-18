@@ -6,6 +6,27 @@ const User = require('../models/user');
 mongoose.connect('mongodb+srv://root:root@cluster0-kxvjp.mongodb.net/test?retryWrites=true');
 // Connecting to db
 
+
+router.post('/login', (req, res, next) => {
+  let userName = req.body.userName;
+  let passWord = req.body.passWord;
+
+  User.findOne({'username': userName}, function(err, user){
+    if(user.password == passWord){
+      res.status(200).json({
+        'status':'success',
+        'id':user._id
+      });
+    }
+    else {
+      res.status(200).json({
+        'status':'failure',
+        'id': 'N/A'
+      });
+    }
+  });
+});
+
 router.get('/', (req, res, next) => {
   console.log('Getting users');
   User.find(function(err, users){
