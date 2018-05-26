@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const usersPath = require('./server/api/routes/users.js');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -23,6 +24,8 @@ app.use('/signup', (req, res, next) => {
 app.use('/search', (req, res, next) => {
   res.sendFile(__dirname+'/client/views/search.html');
 });
+
+app.use('/api/users', usersPath);
 
 app.use('/', (req, res, next) => {
   res.sendFile(__dirname+'/client/views/signup.html');
