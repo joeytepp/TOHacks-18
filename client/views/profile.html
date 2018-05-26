@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="./css/home.css" rel="stylesheet" type="text/css">
+    <link href="./css/profile.css" rel="stylesheet" type="text/css">
     <link href="./css/main.css" rel="stylesheet" type="text/css">
 
 <title>Profile</title>
@@ -51,15 +51,39 @@
       <h3>Gender: </h3>
       <h3>Year of Study: </h3>
       <h3>Program: </h3>
-      <h3>Birthplace: </h3>   
+      <h3>Birthplace: </h3>
  </div>
 
-  <div class = "logo">
-    <img src="./img/textlogo.png" alt = "Homies logo"
-    align = "middle"
-    width =380px
-    height = 200px
-    display: block
-    margin-left: auto
-    margin-right: auto/>
-  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" charset="utf-8"></script>
+ <script>
+   $.get(document.URL.replace("profile", "")+"api/users/", function(data){
+     console.log(data)
+   })
+var createNewIdent  = function(name, school, gender, year, program, birthPlace){
+  var newIdent = document.createElement('div')
+  newProfile.name = name;
+  newProfile.school = school;
+  newProfile.gender = gender;
+  newProfile.year = year;
+  newProfile.program = program;
+  newProfile.birthPlace = birthPlace;
+
+  document.getElementById("Profile").append(newProfile)
+}
+ </script>
+
+ <div id="googleMap" style="width:100%;height:200px;"></div>
+
+ <script>
+ function myMap() {
+ var mapProp= {
+     center:new google.maps.LatLng(51.508742,-0.120850),
+     zoom:5,
+ };
+ var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+ }
+ </script>
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+ </body>
