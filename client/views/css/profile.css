@@ -18,14 +18,15 @@ body {
 }
 
 h1 {
-  text-align: center;
-  font: 70px "Georgia", Helvetica, Arial, sans-serif
+  text-align: left;
+  padding-left: 28%;
+  font: 70px "Arial", Helvetica, Arial, sans-serif
 
 }
 h3 {
   text-align: right;
   padding-right: 80%;
-  font: 40px "Georgia", Helvetica, Arial, sans-serif
+  font: 40px "Arial", Helvetica, Arial, sans-serif
 
 }
 a {
@@ -47,4 +48,7 @@ a {
   left: 100px;
   top: 0px;
   z-index: 0
+}
+.img-profile1{
+  padding-left: 10%;
 }
