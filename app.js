@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const usersPath = require('./server/api/routes/users');
@@ -12,7 +13,9 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/client/views'))
 // For access to local files
 
+app.use(session({secret: 'secret'}));
 // Routes for views
+
 app.use('/home', (req, res, next) => {
   res.sendFile(__dirname+'/client/views/home.html');
 });
@@ -45,6 +48,8 @@ app.use('/api/users', usersPath);
 app.use('/api/groups', groupsPath);
 
 app.use('/', (req, res, next) => {
+  req.session.test = 'hey';
+  console.log(req.session);
   res.sendFile(__dirname+'/client/views/signup.html');
 });
 

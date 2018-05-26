@@ -38,6 +38,10 @@ body {
   background-position: center center;
 }
 
+h3 {
+  font-size: 10px;
+}
+
 .form-signin-heading {
     display: block;
     font-size: 2em;
@@ -48,4 +52,48 @@ body {
     color: white;
     font-family: Berlin;
     font-weight: bold;
+}
+
+input{
+  margin-bottom:10px;
+
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    font-family: Berlin;
+    font-size:20px;
+    color: white;
+    padding: 3px;
+    border-radius:5px;
+    background-color: rgb(255, 163, 26);
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: lightblue;
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.sub-heading {
+    display: block;
+    font-size: 25px;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    color: white;
+    font-family: Berlin;
+}
+.wrapper{
+  text-align: center;
 }
