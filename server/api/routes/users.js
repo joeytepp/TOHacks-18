@@ -13,6 +13,7 @@ router.post('/login', (req, res, next) => {
 
   User.findOne({'username': userName}, function(err, user){
     if(user.password == passWord){
+      req.session.user_id = user._id;
       res.status(200).json({
         'status':'success',
         'id':user._id
