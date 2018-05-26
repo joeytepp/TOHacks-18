@@ -8,6 +8,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
+app.use(express.static(__dirname + '/client/views'))
+// For access to local files
+
 // ROUTES
 app.use('/home', (req, res, next) => {
   res.sendFile(__dirname+'/client/views/home.html');
