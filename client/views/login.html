@@ -54,12 +54,12 @@
       <div class = "signin-container">
       <form class="form-signin">
         <h2 class="form-signin-heading">Welcome Back Homie!</h2>
-        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+        <input id = "userName" type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+        <input id = "passWord" type="password" class="form-control" name="password" placeholder="Password" required=""/>
         <label class="checkbox">
           <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onClick = "veriftyUser()">Login</button>
       </form>
     </div>
     </div>
@@ -69,3 +69,25 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script>
+  var verifyUser = function() {
+    var userName = document.getElementById('userName').value;
+    var password = document.getElementByID('passWord').value;
+
+    $.ajax({
+      type: "POST",
+        url: document.URL.replace('login', ''),
+        data: {userName: userName, passWord: passWord},
+        success: function(data){
+          if(data.status == success){
+            winow.location.href = 'localhost:3000/home';
+          }else{
+            alert('Wrong username or password');
+          }
+        },
+        dataType: dataType
+     });
+    // $.post(document.URL.replace('login', ''), )
+  }
+
+</script>
