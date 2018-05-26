@@ -32,7 +32,7 @@
 }
 
 body {
-  background-image: url(/img/background3.jpg);
+  background-image: url(/img/background6.jpg);
   background-size:     cover;                      /* <------ */
   background-repeat:   no-repeat;
   background-position: center center;
@@ -72,6 +72,8 @@ input{
     color: white;
     padding: 3px;
     border-radius:5px;
+    padding-left: 5px;
+    padding-right:5px;
     background-color: rgb(0,112,217);
     display: inline-block;
     transition: 0.2s;
