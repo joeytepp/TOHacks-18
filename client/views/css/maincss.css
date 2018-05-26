@@ -1,0 +1,13 @@
+
+
+
+
+.form-signin {
+  margin: 0 auto;
+  width:40%;
+  align = middle;
+}
+
+#grad {
+    background: linear-gradient(rgb(255, 163, 26), rgb(255, 235, 204));
+}
