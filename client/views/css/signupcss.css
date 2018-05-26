@@ -6,6 +6,7 @@
 
 .signin-container{
   background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
   height = 110%;
   align = middle
   width: 10px;
