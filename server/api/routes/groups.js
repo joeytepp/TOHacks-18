@@ -21,5 +21,9 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   console.log('Posting groups');
-  //const newPost =
-})
+  const newGroup = new Group({
+
+  });
+});
+
+module.exports = router;

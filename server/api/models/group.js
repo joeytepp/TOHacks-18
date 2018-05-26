@@ -11,9 +11,9 @@ const schema = new Schema({
     type: [
       {
         _id: mongoose.Schema.Types.ObjectId,
-        required: true
       }
-    ]
+    ],
+    required: true
   },
 
   numFilled: {
