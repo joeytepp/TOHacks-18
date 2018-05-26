@@ -33,3 +33,21 @@ a {
     position: absolute;
     top: 50%;
 }
+
+.post-wrapper{
+  background-color: rgba(333, 333, 333, 0.4);
+  height: 650px;
+  align = middle
+  width = 80%;
+  margin-right: 250px;
+  margin-left: 250px;
+  padding-bottom: 100px;
+}
+.wrapper1 {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 200px;
+  align = middle
+  width = 120%;
+  margin-right: 250px;
+  margin-left: 250px;
+}
