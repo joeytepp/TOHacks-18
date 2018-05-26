@@ -72,13 +72,14 @@ input{
     color: white;
     padding: 3px;
     border-radius:5px;
-    background-color: rgb(255, 163, 26);
+    background-color: rgb(0,112,217);
     display: inline-block;
+    transition: 0.2s;
 }
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-    background-color: lightblue;
+    background-color: rgb(0, 83, 166);
 }
 .inputfile + label {
 	cursor: pointer; /* "hand" cursor */
