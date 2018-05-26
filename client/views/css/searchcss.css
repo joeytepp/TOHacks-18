@@ -49,6 +49,13 @@ body {
     text-align: center;
 }
 
+.card img{
+    transition: transform .2s;
+}
+.card img:hover{
+    transform: scale(1.25);
+}
+
 .title {
     color: grey;
     font-size: 18px;
