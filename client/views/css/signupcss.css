@@ -78,7 +78,7 @@ input{
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-    background-color: lightblue;
+    background-color: rgb(0,112,217);
 }
 .inputfile + label {
 	cursor: pointer; /* "hand" cursor */
