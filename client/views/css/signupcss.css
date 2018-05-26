@@ -13,5 +13,8 @@
 }
 
 body {
-  background: #ffffff url("./img/background1.jpg") no-repeat right top;
+  background-image: url(/img/background3.jpg);
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
 }
