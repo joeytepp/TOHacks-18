@@ -27,3 +27,5 @@ const schema = new Schema({
   }
 
 });
+
+module.exports = mongoose.model('Group', schema);
