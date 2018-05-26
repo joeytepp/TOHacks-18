@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const User = require('../models/user');
 
-mongoose.connect('mongodb://localhost:27017/homease');
+mongoose.connect('mongodb+srv://root:root@cluster0-kxvjp.mongodb.net/test?retryWrites=true');
 // Connecting to db
 
 router.get('/', (req, res, next) => {
