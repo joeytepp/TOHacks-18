@@ -52,15 +52,13 @@
   </br>
     <div class="wrapper">
       <div class = "signin-container">
-      <form class="form-signin">
         <h2 class="form-signin-heading">Welcome Back Homie!</h2>
         <input id = "userName" type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
         <input id = "passWord" type="password" class="form-control" name="password" placeholder="Password" required=""/>
         <label class="checkbox">
           <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onClick = "veriftyUser()">Login</button>
-      </form>
+        <button id="submitButton" class="btn btn-lg btn-primary btn-block" onclick = "verifyUser()">Login</button>
     </div>
     </div>
 
@@ -71,23 +69,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 <script>
   var verifyUser = function() {
-    var userName = document.getElementById('userName').value;
-    var password = document.getElementByID('passWord').value;
+    console.log('test');
+    var user = document.getElementById('userName').value;
+    var pass = document.getElementById('passWord').value;
 
-    $.ajax({
-      type: "POST",
-        url: document.URL.replace('login', ''),
-        data: {userName: userName, passWord: passWord},
-        success: function(data){
-          if(data.status == success){
-            winow.location.href = 'localhost:3000/home';
-          }else{
-            alert('Wrong username or password');
-          }
-        },
-        dataType: dataType
-     });
-    // $.post(document.URL.replace('login', ''), )
+    $.post("api/users/login", {userName: user, passWord: pass}, function(data, status){
+      console.log(data);
+      if(data.status == "success"){
+        localStorage.setItem("user_id", data.id);
+        window.location.href = "/profile/";
+      }else{
+        alert("Incorrect username or password");
+      }
+    })
   }
-
 </script>

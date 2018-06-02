@@ -56,7 +56,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" charset="utf-8"></script>
  <script>
-   $.get(document.URL.replace("profile", "")+"api/users/", function(data){
+   $.get("api/users/", function(data){
      console.log(data)
    })
 var createNewIdent  = function(name, school, gender, year, program, birthPlace){

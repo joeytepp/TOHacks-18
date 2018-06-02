@@ -1,3 +1,8 @@
+// Set up environment
+const env = require('dotenv');
+env.config('./.env');
+
+// Dependencies
 const express = require('express');
 const app = express();
 const session = require('express-session');
@@ -13,7 +18,6 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/client/views'))
 // For access to local files
 
-app.use(session({secret: 'secret'}));
 // Routes for views
 
 app.use('/home', (req, res, next) => {

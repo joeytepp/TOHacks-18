@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const User = require('../models/user');
 
-mongoose.connect('mongodb+srv://root:root@cluster0-kxvjp.mongodb.net/test?retryWrites=true');
+mongoose.connect('mongodb+srv://'+process.env.MONGOUSER+':'+process.env.MONGOPASS+'@cluster0-kxvjp.mongodb.net/test?retryWrites=true');
 // Connecting to db
 
 
@@ -12,8 +12,7 @@ router.post('/login', (req, res, next) => {
   let passWord = req.body.passWord;
 
   User.findOne({'username': userName}, function(err, user){
-    if(user.password == passWord){
-      req.session.user_id = user._id;
+    if(user && user.password == passWord){
       res.status(200).json({
         'status':'success',
         'id':user._id

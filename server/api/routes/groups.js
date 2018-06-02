@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Group = require('../models/group');
 const User = require('../models/user');
 
-mongoose.connect('mongodb+srv://root:root@cluster0-kxvjp.mongodb.net/test?retryWrites=true');
+mongoose.connect('mongodb+srv://'+process.env.MONGOUSER+':'+process.env.MONGOPASS+'@cluster0-kxvjp.mongodb.net/test?retryWrites=true');
 // Connecting to db
 
 router.get('/', (req, res, next) => {
